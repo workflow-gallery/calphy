@@ -1,2 +1,3 @@
 ,id,status,chemicalformula,job,subjob,project,timestart,timestop,totalcputime,computer,hamilton,hamversion,parentid,masterid
-0,0,finished,Si2,lmp_si,/lmp_si,save/old_calculation,2021-03-19 16:21:40.376046,2021-03-19 16:21:41.573096,1.0,pyiron@MacBook-Pro.local#1,Lammps,0.1,,
+0,0,finished,,tm_cu_sol,/tm_cu_sol,save/melting_temperature,2022-07-28 15:05:49.786065,2022-07-28 15:06:33.242462,43.0,pyiron@cmleo26#2,Calphy,0.4,,
+1,1,finished,,tm_cu_lqd,/tm_cu_lqd,save/melting_temperature,2022-07-28 15:06:33.438176,2022-07-28 15:07:34.701286,61.0,pyiron@cmleo26#2,Calphy,0.4,,

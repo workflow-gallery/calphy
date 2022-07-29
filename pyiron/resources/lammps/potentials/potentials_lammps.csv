@@ -1,2 +1,2 @@
 Config,Filename,Model,Name,Species,Citations
-0,"['pair_style quip\n', 'pair_coeff * * sw_example.xml ""IP SW"" 14\n']","['quip/sw_example.xml', 'quip/data_sw']",QUIP,Si-quip-xml,['Si'],{}
+0,"['pair_style eam/alloy\n', 'pair_coeff * * Cu01.eam.alloy Cu']","['eam/Cu01.eam.alloy']",EAM,2001--Mishin-Y--Cu-1--LAMMPS--ipr1,['Cu'],{}
