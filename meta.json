@@ -1,35 +1,29 @@
 {
     "workflow_environment":"pyiron",
-    "title": "pyiron workflow template",
+    "title": "calphy",
     "authors": [
-        "author1 <email_address>",
-        "author2 <email_address>"
+        "Sarath Menon <s.menon@mpie.de>"
     ],
-    "description": "description of what the workflow does",
+    "description": "Calculation of melting temperature using calphy and pyiron",
     "release": "0.0.1",
     "keywords": [
-        "workflow",
-        "template",
-        "keyword1",
-        "keyword2"
+        "free_energy",
+        "atomistics",
+        "molecular_dynamics",
+        "thermodynamics"
     ],
     "categories":[
-        "category1, e.g., continuum/atomistics/experimental",
-        "catergory2, e.g., continuum/atomistics/experimental"
+        "category1, e.g., atomistics",
     ],
     "steps/codes":[
-        "step1, e.g., calculation of elastic modulus",
-        "code1, e.g., LAMMPS",
-        "step2, e.g., macroscopic response",
-        "code2, e.g., DAMASK"
+        "step1, e.g., calculation of free energies",
+        "code1, e.g., calphy"
     ],
     "license": {
-        "softwar1": "license1",
-        "software2": "license2"
+        "software1": "GPLv3"
     },
     "publication": [
-        "publication1",
-        "publication2"
+        "https://journals.aps.org/prmaterials/abstract/10.1103/PhysRevMaterials.5.103801"
     ],
     "logo" : "logo_dark.png"
 }
