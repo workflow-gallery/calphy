@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; pyiron-gallery-calphy</title>
+    <title>Calculation of melting temperature &#8212; pyiron-gallery-calphy</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="example_run.html" />
-    <link rel="prev" title="pyiron workflow template" href="README.html" />
+    <link rel="next" title="Calculation of melting temperature" href="example_run.html" />
+    <link rel="prev" title="Calculation of melting temperature" href="README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -109,11 +109,23 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="README.html">
-                    pyiron workflow template
+                    Calculation of melting temperature
                 </a>
             </li>
         </ul>
-        
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Calculation of melting temperature
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="example_run.html">
+   Calculation of melting temperature
+  </a>
+ </li>
+</ul>
+
     </div>
 </nav></div>
         <div class="bd-sidebar__bottom">
@@ -272,7 +284,17 @@ title="Print to PDF"
         <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pyiron-atomistics">
+   pyiron_atomistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calphy">
+   calphy
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -282,7 +304,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>Calculation of melting temperature</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -291,7 +313,17 @@ title="Print to PDF"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pyiron-atomistics">
+   pyiron_atomistics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calphy">
+   calphy
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -302,18 +334,17 @@ title="Print to PDF"
                 
               <div>
                 
-  <p style="width:100%;color:#B71C1C;font-size:28px;text-align:justify"> Calculation of melting temperature </p> <p>In this notebook, we will use interatomic potentials for the calculation of thermodynamic properties such as Helmholtz and Gibbs free energies, which in turn can be used for the calculation of phase diagrams. We will discuss calphy, the tool for automated calculation of free energies, and the methology involved. As a first step, we will calculate the melting temperature of Copper. A brief introduction to the tools.</p>
-<table border="0">
- <tr>
-    <td style="width:60%"> <p style="width:100% color:gray;font-size:24px;text-align:right"> <a href="https://github.com/pyiron/pyiron_atomistics">pyiron-atomistics</a> provides integrations for atomistics tools enabling seamless cross-code workflows from jupyter notebooks.</p> </td>
-    <td style="width:40%"><img src="img/logo.png" width="50%" align="justify"></td>
-  </tr>
-</table><table border="0">
- <tr>
-    <td style="width:40%"><img src="img/calphy_logo.png" width="100%" align="justify"></td>
-    <td style="width:60%"> <p style="width:100% color:gray;font-size:18px;text-align:justify"> Calphy is a Python code for automated calculation of free energies. It enables calculation of Helmholtz and Gibbs free energy for both solid and liquid phases at the given thermodynamic conditions using automated protocols </p> </td>
- </tr>
-</table><p>This notebook <strong>explores</strong> the finished calculations. If you would like to instead run them, please see notebook <a class="reference internal" href="example_run.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">example_run.ipynb</span></code></span></a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="calculation-of-melting-temperature">
+<h1>Calculation of melting temperature<a class="headerlink" href="#calculation-of-melting-temperature" title="Permalink to this headline">#</a></h1>
+<p>In this notebook, we will use interatomic potentials for the calculation of thermodynamic properties such as Helmholtz and Gibbs free energies, which in turn can be used for the calculation of phase diagrams. We will discuss calphy, the tool for automated calculation of free energies, and the methology involved. As a first step, we will calculate the melting temperature of Copper. A brief introduction to the tools.</p>
+<section id="pyiron-atomistics">
+<h2>pyiron_atomistics<a class="headerlink" href="#pyiron-atomistics" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://github.com/pyiron/pyiron_atomistics">pyiron_atomistics</a> provides integrations for atomistics tools enabling seamless cross-code workflows from jupyter notebooks.</p>
+</section>
+<section id="calphy">
+<h2>calphy<a class="headerlink" href="#calphy" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://calphy.org">Calphy</a> is a Python code for automated calculation of free energies. It enables calculation of Helmholtz and Gibbs free energy for both solid and liquid phases at the given thermodynamic conditions using automated protocols.</p>
+<p>This notebook <strong>explores</strong> the finished calculations. If you would like to instead run them, please see notebook <a class="reference internal" href="example_run.html"><span class="doc std std-doc"><code class="docutils literal notranslate"><span class="pre">example_run.ipynb</span></code></span></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -567,6 +598,8 @@ title="Print to PDF"
 <img alt="_images/example_explore_30_0.png" src="_images/example_explore_30_0.png" />
 </div>
 </div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -599,13 +632,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">pyiron workflow template</p>
+            <p class="prev-next-title">Calculation of melting temperature</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="example_run.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Calculation of melting temperature</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
