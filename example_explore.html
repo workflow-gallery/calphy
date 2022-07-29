@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Calculation of melting temperature &#8212; pyiron-gallery-calphy</title>
+    <title>Calculation of melting temperature &#8212; calphy</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -97,7 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
       <img src="_static/logo_dark.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">pyiron-gallery-calphy</h1>
+      <h1 class="site-logo" id="site-title">calphy</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -183,7 +183,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/workflow-gallery/pyiron-gallery-calphy/master?urlpath=lab/tree/example_explore.ipynb"
+        <a href="https://mybinder.org/v2/gh/workflow-gallery/calphy/master?urlpath=lab/tree/example_explore.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -370,6 +370,13 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;pyiron/calculation/save&quot;</span><span class="p">,</span> <span class="n">csv_file_name</span><span class="o">=</span><span class="s2">&quot;pyiron/calculation/export.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pr</span><span class="o">.</span><span class="n">job_table</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -413,13 +420,13 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>0</th>
-      <td>203</td>
+      <td>1</td>
       <td>finished</td>
       <td>None</td>
       <td>tm_cu_sol</td>
       <td>/tm_cu_sol</td>
-      <td>None</td>
-      <td>/mnt/c/Users/menon/Documents/winrepos/pyiron-gallery-calphy/melting_temperature/</td>
+      <td>/home/jovyan/</td>
+      <td>melting_temperature/melting_temperature/</td>
       <td>2022-07-28 15:05:49.786065</td>
       <td>2022-07-28 15:06:33.242462</td>
       <td>43.0</td>
@@ -431,13 +438,13 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>1</th>
-      <td>204</td>
+      <td>2</td>
       <td>finished</td>
       <td>None</td>
       <td>tm_cu_lqd</td>
       <td>/tm_cu_lqd</td>
-      <td>None</td>
-      <td>/mnt/c/Users/menon/Documents/winrepos/pyiron-gallery-calphy/melting_temperature/</td>
+      <td>/home/jovyan/</td>
+      <td>melting_temperature/melting_temperature/</td>
       <td>2022-07-28 15:06:33.438176</td>
       <td>2022-07-28 15:07:34.701286</td>
       <td>61.0</td>
@@ -451,79 +458,15 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
-<p>First create an FCC structure</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">structure</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create</span><span class="o">.</span><span class="n">structure</span><span class="o">.</span><span class="n">ase</span><span class="o">.</span><span class="n">bulk</span><span class="p">(</span><span class="s1">&#39;Cu&#39;</span><span class="p">,</span> <span class="n">cubic</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now we will calculate the free energy of the solid structure. The experimental melting temperature is 1358 K, so we will choose the range of 1200-1500 K for calculating the free energy for solid and liquid structures. First the solid structure.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">Calphy</span><span class="p">(</span><span class="s2">&quot;tm_cu_sol&quot;</span><span class="p">)</span>
-<span class="n">sol</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">structure</span>
-<span class="n">sol</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="s2">&quot;2001--Mishin-Y--Cu-1--LAMMPS--ipr1&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;tm_cu_sol&quot;</span><span class="p">)</span>
+<span class="n">lqd</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;tm_cu_lqd&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>The EAM potential we will use is : <a class="reference external" href="https://doi.org/10.1103/PhysRevB.63.224106">Mishin, Y., M. J. Mehl, D. A. Papaconstantopoulos, A. F. Voter, and J. D. Kress. “Structural Stability and Lattice Defects in Copper: Ab Initio , Tight-Binding, and Embedded-Atom Calculations.” Physical Review B 63, no. 22 (May 21, 2001): 224106.</a></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">cores</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">sol</span><span class="o">.</span><span class="n">calc_free_energy</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="p">[</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">1500</span><span class="p">],</span> 
-                     <span class="n">pressure</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
-                     <span class="n">reference_phase</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span>
-                     <span class="n">n_equilibration_steps</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>
-                     <span class="n">n_switching_steps</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Before we actually run the calculation, let us discuss the various parameters. <code class="docutils literal notranslate"><span class="pre">temperature</span></code> keyword gives the temperature range over which the free energy is to be calculated. <code class="docutils literal notranslate"><span class="pre">pressure</span></code> denotes the pressure of the calculation, we chose 0 in this case. Since we are using a solid FCC lattice, we set <code class="docutils literal notranslate"><span class="pre">reference_phase</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;solid&quot;</span></code>. This means that the Einstein crystal will be used as the reference system. Finally, we have <code class="docutils literal notranslate"><span class="pre">n_equilibration_steps</span></code> and <code class="docutils literal notranslate"><span class="pre">n_switching_steps</span></code>. <code class="docutils literal notranslate"><span class="pre">n_equilibration_steps</span></code> denotes the number of MD steps over which the system is equilibrated to the required temperature and pressure. <code class="docutils literal notranslate"><span class="pre">n_switching_steps</span></code> are the number of MD steps over which the system is continuously transformed between the given interatomic potential, and the reference Einstein crystal.</p>
-<p>Now we run the job</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-07-29 12:37:28,121 - pyiron_log - WARNING - The job tm_cu_sol is being loaded instead of running. To re-run use the argument &#39;delete_existing_job=True in create_job&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now we run the calculation for the liquid system</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lqd</span> <span class="o">=</span> <span class="n">pr</span><span class="o">.</span><span class="n">create</span><span class="o">.</span><span class="n">job</span><span class="o">.</span><span class="n">Calphy</span><span class="p">(</span><span class="s2">&quot;tm_cu_lqd&quot;</span><span class="p">)</span>
-<span class="n">lqd</span><span class="o">.</span><span class="n">structure</span> <span class="o">=</span> <span class="n">structure</span>
-<span class="n">lqd</span><span class="o">.</span><span class="n">potential</span> <span class="o">=</span> <span class="s2">&quot;2001--Mishin-Y--Cu-1--LAMMPS--ipr1&quot;</span>
-<span class="n">lqd</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">cores</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">lqd</span><span class="o">.</span><span class="n">calc_free_energy</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="p">[</span><span class="mi">1200</span><span class="p">,</span> <span class="mi">1500</span><span class="p">],</span> 
-                     <span class="n">pressure</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
-                     <span class="n">reference_phase</span><span class="o">=</span><span class="s2">&quot;liquid&quot;</span><span class="p">,</span>
-                     <span class="n">n_equilibration_steps</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>
-                     <span class="n">n_switching_steps</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lqd</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-07-29 12:37:32,011 - pyiron_log - WARNING - The job tm_cu_lqd is being loaded instead of running. To re-run use the argument &#39;delete_existing_job=True in create_job&#39;
-</pre></div>
-</div>
-</div>
-</div>
 <p>Now we look at the results</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -538,7 +481,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/example_explore_23_0.png" src="_images/example_explore_23_0.png" />
+<img alt="_images/example_explore_14_0.png" src="_images/example_explore_14_0.png" />
 </div>
 </div>
 <p>The melting temperature is defined as the temperature at which the free energy difference between the solid and liquid phases is zero. We can also plot the free energy difference directly.</p>
@@ -559,7 +502,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1281.722635221738
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1274.1558717349756
 </pre></div>
 </div>
 </div>
@@ -579,7 +522,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/example_explore_29_0.png" src="_images/example_explore_29_0.png" />
+<img alt="_images/example_explore_20_0.png" src="_images/example_explore_20_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -595,7 +538,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/example_explore_30_0.png" src="_images/example_explore_30_0.png" />
+<img alt="_images/example_explore_21_0.png" src="_images/example_explore_21_0.png" />
 </div>
 </div>
 </section>
