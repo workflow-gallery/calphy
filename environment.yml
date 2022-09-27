@@ -2,6 +2,25 @@ channels:
 - conda-forge
 dependencies:
 - python
-- pyiron_atomistics
 - lammps =2021.09.29=*openmpi*
 - calphy
+- python >3.7
+- aimsgb >=0.1.0
+- ase >=3.22.1
+- defusedxml >=0.7.1
+- future >=0.18.2
+- h5py >=2.10.0  # for tensorflow compatibility
+- matplotlib-base >=3.5.2
+- mendeleev >=0.10.0
+- numpy >=1.19.5  # for numba and pytorch compatibility
+- pandas >=1.4.3
+- phonopy >=2.15.1
+- pint >=0.19.2
+- pymatgen >=2020.12.31  # for pytorch compatibility
+- pyiron_base >=0.5.21
+- pyscal >=2.10.15
+- pytables >=3.7.0
+- scipy >=1.9.0
+- seekpath >=2.0.1
+- scikit-learn >=1.1.2
+- spglib >=1.16.5
