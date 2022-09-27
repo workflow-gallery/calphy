@@ -1,6 +1,12 @@
 # install environment 
 mamba env update --name notebook --file environment.yml
 
+#temp: install pyiron
+git clone https://github.com/pyiron/pyiron_atomistics.git
+cd pyiron_atomistics
+python setup.py install
+cd ..
+
 # move pyiron config to home directory 
 mv .binder/.pyiron .
 
